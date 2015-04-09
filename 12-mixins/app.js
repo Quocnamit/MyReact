@@ -1,40 +1,48 @@
-var App = React.createClass({
-	getInitialState: function () {
+var ReactMixin = {
+	componentWillMount: function() {
+		console.log("component will mount");
+	},
+	getInitialState: function() {
 		return {
-			txt: "",
-
-		}
+			count:0
+		};
 	},
+	incrementCount:function(){
+		this.setState({count:this.state.count+1})
+	}
 
-	update: function (e){
-		this.setState({
-			txt: e.target.value
-		});
-	},
+}
 
-	render: function () {
+var buttonComponent = React.createClass({
+	mixins:[ReactMixin],
+	render: function() {
 		return (
-			<div>
-				<Widget txt={this.state.txt} update={this.update} />
-				<Widget txt={this.state.txt} update={this.update} />
-				<Widget txt={this.state.txt} update={this.update} />
-				<Widget txt={this.state.txt} update={this.update} />
-				<Widget txt={this.state.txt} update={this.update} />
-			</div>
-			);
+			<button onClick={this.incrementCount}>{this.props.txt} - {this.state.count}</button>
+			)
 	}
 })
 
-var Widget = React.createClass({
-	render: function () {
+var inputComponent = React.createClass({
+	mixins:[ReactMixin],
+	componentWillMount: function() {
+		setInterval(this.incrementCount,1000);
+	},
+	render: function() {
+		return (
+			<input value={this.props.txt + ' - '+ this.state.count} />
+			)
+	}
+})
+
+var App = React.createClass({
+	render: function() {
 		return (
 			<div>
-				<input placeholder="enter the value" onChange={this.props.update} />
-				<br />
-				<h2>{this.props.txt}</h2>
+				<buttonComponent txt="this is the button" />
+        <inputComponent txt="this is the input" />
 			</div>
-			);
+			)
 	}
 });
 
-React.render(<App txtprop="This is the properties txtprop" />, document.body);
+React.render(<App />, document.body)
