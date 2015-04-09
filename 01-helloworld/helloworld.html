@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="em">
+<head>
+	<meta charset="UTF-8">
+
+	<title>Hello World</title>
+	<link rel="stylesheet"
+        href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" />
+	<script type="text/javascript" src="http://fb.me/react-0.12.2.js"></script>
+	<script type="text/javascript" src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+</head>
+<body>
+
+<script type="text/jsx">
+	var App = React.createClass({
+		render: function(){
+			return <h1>Hello World</h1>
+		}
+	});
+
+	React.render(<App />,document.body);
+</script>
+<script>
+	// var HelloReactDom = React.createClass({
+	// 	render: function(){
+	// 		return React.DOM.h1(null,"Hi There ! Create H1 element with React.DOM.h1")
+	// 	}
+	// });
+
+	// React.render(HelloReactDom(),document.body);
+</script>
+
+<script>
+	// var HelloReactElement = React.createClass({
+	// 	render: function(){
+	// 		return React.createElement("h1",null,"Hi There ! Create H1 element with React.createElement");
+	// 	}
+	// });
+
+	// React.render(HelloReactElement(),document.body);
+</script>
+</body>
+</html>

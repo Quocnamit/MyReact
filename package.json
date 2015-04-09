@@ -1,0 +1,9 @@
+{
+  "name": "myreact",
+  "version": "0.0.0",
+  "description": "react fundamentals",
+  "main": "server.js",
+  "dependencies": {
+    "express": "~4.7.2"
+  }
+}
