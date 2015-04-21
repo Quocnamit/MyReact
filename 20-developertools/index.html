@@ -1,13 +1,30 @@
-<!DOCTYPE html>
-<html lang="em">
+<!doctype html>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-
-	<title>Hello World</title>
-	<script type="text/javascript" src="http://fb.me/react-0.12.2.js"></script>
-	<script type="text/javascript" src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+  <meta charset="UTF-8">
+  <title>Developer Tools, Integrate components together</title>
+  <link rel="stylesheet" href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css">
+  <link rel="stylesheet"
+        href="/bower_components/bootstrap/dist/js/bootstrap.min.js" />
+  <script type="text/javascript" src="/bower_components/react/react.js"></script>
+  <script type="text/javascript" src="/bower_components/react/JSXTransformer.js"></script>
+  <script type="text/jsx" src="components/Site.js"></script>
+  <script type="text/jsx" src="components/Nav.js"></script>
+  <script type="text/jsx" src="components/NavPill.js"></script>
+  <script type="text/jsx" src="components/Jumbotron.js"></script>
+  <script type="text/jsx" src="components/Lead.js"></script>
+  <script type="text/jsx" src="components/Footer.js"></script>
+  <script type="text/jsx" src="components/Container.js"></script>
+  <script type="text/jsx" src="components/Row.js"></script>
+  <script type="text/jsx" src="components/Feature.js"></script>
+  <script type="text/jsx" src="components/FeatureButton.js"></script>
 </head>
 <body>
-	<script type="text/jsx" src="app.js"></script>
+<script type="text/jsx">
+  /** @jsx React.DOM */
+  React.renderComponent(
+    <Site />,
+    document.body)
+</script>
 </body>
 </html>

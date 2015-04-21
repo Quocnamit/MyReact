@@ -5,7 +5,7 @@ var ReactMixin = {
 	getInitialState: function() {
 		return {
 			count:0
-		};
+		}
 	},
 	incrementCount:function(){
 		this.setState({count:this.state.count+1})
@@ -13,7 +13,7 @@ var ReactMixin = {
 
 }
 
-var buttonComponent = React.createClass({
+var ButtonComponent = React.createClass({
 	mixins:[ReactMixin],
 	render: function() {
 		return (
@@ -22,7 +22,7 @@ var buttonComponent = React.createClass({
 	}
 })
 
-var inputComponent = React.createClass({
+var InputComponent = React.createClass({
 	mixins:[ReactMixin],
 	componentWillMount: function() {
 		setInterval(this.incrementCount,1000);
@@ -38,8 +38,8 @@ var App = React.createClass({
 	render: function() {
 		return (
 			<div>
-				<buttonComponent txt="this is the button" />
-        <inputComponent txt="this is the input" />
+				<ButtonComponent txt="this is the button" />
+        		<InputComponent txt="this is the input" />
 			</div>
 			)
 	}
